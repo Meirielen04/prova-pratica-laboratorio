@@ -12,9 +12,9 @@ public class Main {
         System.out.println("=== Sistema de Reserva de Laboratorio - Prova Pratica ===");
         System.out.println();
 
-        InventarioLegadoWS legado = new InventarioLegadoWS();
-        CatalogoEquipamentos catalogo = new CatalogoEquipamentos(legado);
-        RelatorioAcervo relatorio = new RelatorioAcervo(legado);
+        FonteEquipamentos fonte = new AdaptadorInventarioLegado(new InventarioLegadoWS());
+        CatalogoEquipamentos catalogo = new CatalogoEquipamentos(fonte);
+        RelatorioAcervo relatorio = new RelatorioAcervo(fonte);
 
         System.out.println("1) O mesmo dado, convertido em dois lugares");
         System.out.println("   Disponiveis segundo o catalogo:");
